@@ -6,6 +6,109 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-heading: 'Playfair Display', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Custom Utilities for Animations */
+@layer utilities {
+    .animate-fade-in-up {
+        animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Reveal Classes (for JS IntersectionObserver) */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.scroll-reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay classes for staggered animations */
+.delay-75 { transition-delay: 75ms; }
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Sticky Navbar Scroll-Driven Animation (Modern CSS) */
+@keyframes shrink-navbar {
+    to {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: #1C2A22; /* Dark Earth */
+        border-bottom-color: rgba(28, 42, 34, 0.1);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+}
+
+@keyframes shrink-navbar-button {
+    to {
+        border-color: #1C2A22;
+        color: #1C2A22;
+    }
+}
+
+@keyframes shrink-navbar-logo {
+    to {
+        color: #1C2A22;
+    }
+}
+
+/* Only apply scroll-driven animations if browser supports it */
+@supports (animation-timeline: scroll()) and (animation-range: 0% 100%) {
+    #main-nav {
+        animation: shrink-navbar auto linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 100px;
+    }
+    
+    #main-nav a[href="#booking"].border {
+        animation: shrink-navbar-button auto linear both;
+        animation-timeline: scroll(block root);
+        animation-range: 0px 100px;
+    }
+}
+
+/* Scrolled state for JS fallback when animation-timeline is not supported */
+.nav-scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    color: #1C2A22 !important;
+    border-bottom-color: rgba(28, 42, 34, 0.1) !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+.nav-scrolled a[href="#booking"].border {
+    border-color: #1C2A22 !important;
+    color: #1C2A22 !important;
+}
+
+.nav-scrolled button.text-current {
+    color: #1C2A22 !important;
 }

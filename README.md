@@ -1,58 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Villa Mewah - Premium, Minimalis & Modern Landing Page
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Proyek ini adalah implementasi *Single-Page Landing Page* untuk Villa Mewah yang dibangun menggunakan **Laravel** dan **Tailwind CSS v4**. Desain difokuskan pada konsep *Modern Luxury*, *Tropical Minimalist*, dan *Clean Spacing*.
 
-## About Laravel
+## 🌟 Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Modern & Responsive Design**: UI sepenuhnya responsif (mobile-first) menggunakan utilitas Tailwind CSS dengan perpaduan warna *Off-White*, *Dark Earth*, dan *Soft Luxury Gold*.
+- **Scroll-Driven Animations (CSS Native)**: Transisi *Sticky Navbar* dari transparan ke efek *glassmorphism* (backdrop blur) menggunakan properti CSS modern `animation-timeline`.
+- **Vanilla JS Fallback**: Menyediakan *fallback* berbasis event listener JS murni untuk browser yang belum mendukung CSS `animation-timeline`.
+- **Intersection Observer (Fade-In & Slide-Up)**: Animasi masuk elemen yang sangat halus (smooth) ketika di-*scroll* (Hero section, content cards, gambar galeri, dsb).
+- **Smooth FAQ Accordion**: Animasi interaktif buka/tutup FAQ murni menggunakan Vanilla JS tanpa library eksternal, lengkap dengan efek rotasi ikon.
+- **Tipografi Premium**: Menggunakan Google Fonts **Playfair Display** (Heading) dan **Plus Jakarta Sans** (Body) untuk memberikan kesan mewah nan modern.
+- **Galeri Dinamis**: Layout grid gambar asimetris yang dioptimalkan, dengan animasi *zoom-in* lambat saat kursor diarahkan (hover).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🗂 Struktur Section
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Landing page ini mencakup 10 *sections* spesifik:
+1. **Hero Section (Fullscreen)**: Sambutan premium dengan latar belakang *full cover*.
+2. **Tentang Villa (About Us)**: Narasi villa yang dipadukan dengan desain *asymmetrical image layout*.
+3. **Daftar Kamar/Villa**: *Card* akomodasi elegan dengan harga yang jelas terlihat.
+4. **Galeri Foto**: *Grid layout* dengan fitur perbesaran visual (*scale*) saat *hover*.
+5. **Fasilitas (Amenities)**: Daftar kenyamanan premium yang direpresentasikan melalui Lucide Icons.
+6. **Testimoni (Reviews)**: Kutipan pengalaman menginap dengan desain berkelas.
+7. **Lokasi & Maps**: Peta Google Maps terintegrasi yang digayakan ulang (*grayscale filter*) agar menyatu dengan estetika website.
+8. **Booking CTA**: Form reservasi ringkas berdesain minimalis tanpa bingkai tebal.
+9. **FAQ**: Pertanyaan populer yang disusun dengan transisi Accordion murni.
+10. **Footer Modern**: Navigasi bawah ringkas, informasi kontak, serta widget berlangganan *newsletter*.
 
-## Learning Laravel
+## 🛠 Teknologi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Framework**: Laravel 11 / 10
+- **Styling**: Tailwind CSS v4 (melalui integrasi Vite)
+- **Javascript**: Vanilla JS (tanpa jQuery)
+- **Icons**: Lucide Icons (via CDN)
+- **Fonts**: Google Fonts
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Cara Menjalankan Secara Lokal
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+1. **Clone repository**:
+   ```bash
+   git clone https://github.com/Artinema-Studio/Villa.git
+   cd Villa
+   ```
 
-## Agentic Development
+2. **Install Dependensi Composer & NPM**:
+   ```bash
+   composer install
+   npm install
+   ```
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+3. **Build Aset Vite**:
+   ```bash
+   npm run build
+   # Atau jika dalam tahap development: npm run dev
+   ```
 
-```bash
-composer require laravel/boost --dev
+4. **Jalankan Server Lokal**:
+   ```bash
+   php artisan serve
+   ```
 
-php artisan boost:install
-```
+5. Buka web browser Anda pada alamat `http://localhost:8000`.
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+*Dikembangkan berdasarkan permintaan Issue #1: Implementasi Landing Page Villa Mewah.*

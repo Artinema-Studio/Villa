@@ -6,6 +6,9 @@
         <title>Villa Mewah - Premium, Minimalis & Modern</title>
         <meta name="description" content="Website landing page untuk villa mewah dengan desain modern, minimalis, dan elegan.">
         
+        <!-- Favicon -->
+        <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
+        
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,7 +136,7 @@
                         <!-- Room 3 -->
                         <div class="group cursor-pointer scroll-reveal delay-200">
                             <div class="relative overflow-hidden rounded-sm mb-6 shadow-sm group-hover:shadow-md transition-shadow duration-300">
-                                <img src="https://images.unsplash.com/photo-1618773928120-2c70281bd74f?auto=format&fit=crop&w=800&q=80" alt="Family Penthouse" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Family Penthouse" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
                                 <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 text-sm font-medium text-[#1C2A22] rounded-sm">
                                     Rp 7.500.000 / malam
                                 </div>
